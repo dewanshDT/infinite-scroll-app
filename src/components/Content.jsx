@@ -18,7 +18,6 @@ const Content = () => {
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver(entries => {
           if(entries[0].isIntersecting) {
-              console.log("got new images boi 😁");
               setPageNumber(prvPgNo => prvPgNo + 1);
           }
       });
@@ -33,6 +32,7 @@ const Content = () => {
       console.log(res.data);
       if (json) setJSON([...json, ...res.data.results]);
       else setJSON(res.data.results);
+      console.log("more Images loded succesfully 📷");
       setLoading(false);
     } catch (error) {
       console.log(error);
