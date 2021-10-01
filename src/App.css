@@ -53,6 +53,7 @@ body, #root {
   height: 100%;
   overflow: auto;
   scroll-behavior: smooth;
+  border-radius: 1rem;
 }
 
 .content-list::-webkit-scrollbar {
