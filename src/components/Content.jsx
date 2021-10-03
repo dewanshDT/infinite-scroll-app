@@ -32,7 +32,7 @@ const Content = () => {
       console.log(res.data);
       if (json) setJSON([...json, ...res.data.results]);
       else setJSON(res.data.results);
-      console.log("more Images loded succesfully 📷");
+      console.log("images loaded");
       setLoading(false);
     } catch (error) {
       console.log(error);
