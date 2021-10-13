@@ -1,10 +1,15 @@
-import create from 'zustand';
+import create from "zustand";
 
-const useStore = create(set => ({
-    URL: "https://api.unsplash.com/search/photos?page=1&query=office&client_id=MrsptAEkuNtiOj9sakWFD9PmsE7roU5qo4Zub6CQgSk&client_secret=F19zKmUGoRQy1QY-FfEodfvh6jKPORIaDZLM7GHL_Nw",
-    rawJSON: [],
-    addJSON: (JSON) => set(state => ({rawJSON: [...state.rawJSON, JSON.map(data => data)]})),
-    setJSON: (JSON) => set(state => ({rawJSON: JSON}))
+const useStore = create((set) => ({
+  rawJSON: [],
+  pageNumber: 1,
+  loading: false,
+  currentItem: {},
+  addJSON: (JSON) =>set((state) => ({ rawJSON: [...state.rawJSON, JSON.map((data) => data)] })),
+  setJSON: (JSON) => set((state) => ({ rawJSON: JSON })),
+  setCurrentItem: (item) => set((state) => ({ currentItem: item })),
+  setPageNumber: (number) => set((state) => ({ pageNumber: number })),
+  setLoading: (bool) => set((state) => ({ loading: bool })),
 }));
 
 export default useStore;

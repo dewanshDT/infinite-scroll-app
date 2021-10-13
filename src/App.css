@@ -1,15 +1,21 @@
-body, #root {
+body,
+#root {
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   color: #333;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
-  background: palegoldenrod
+  background: palegoldenrod;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .arrow-btn {
@@ -17,7 +23,7 @@ body, #root {
   border: none;
   border-radius: 50%;
   width: max-content;
-  padding: .1rem;
+  padding: 0.1rem;
   width: 2.2rem;
   height: 2.2rem;
   text-align: center;
@@ -37,7 +43,7 @@ body, #root {
 
 .content-box {
   background: #eee;
-  box-shadow: inset 0 0 .5em .1em #3335;
+  box-shadow: inset 0 0 0.5em 0.1em #3335;
   width: 400px;
   height: 80%;
   border-radius: 1rem;
