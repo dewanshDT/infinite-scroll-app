@@ -12,15 +12,13 @@ const Image = () => {
     history.push("/");
   };
 
-  if (currentItem)
-    return (
-      <div>
-        hello bois, here's your id {id}
-        <img src={currentItem.urls.regular} />
-        <BackBtn func={back} />
-      </div>
-    );
-  else history.push("/");
+  return (
+    <div className="image-container">
+      <BackBtn func={back} />
+      hello bois, here's your id {id}
+      <img src={currentItem.urls ? currentItem.urls.regular : ""} />
+    </div>
+  );
 };
 
 export default Image;

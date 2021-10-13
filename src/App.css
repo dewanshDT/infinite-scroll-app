@@ -69,3 +69,14 @@ a {
 .image > img {
   border-radius: 1rem;
 }
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-container .arrow-btn {
+  position: initial;
+  transform: rotateZ(-90deg);
+}

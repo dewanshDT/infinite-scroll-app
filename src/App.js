@@ -1,7 +1,12 @@
 import "./App.css";
 import Content from "./components/Content";
 import Image from "./components/Image";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useHistory,
+} from "react-router-dom";
 import React, { useEffect } from "react";
 import axios from "axios";
 import useStore from "./store";
@@ -11,6 +16,8 @@ function App() {
   const setLoading = useStore((state) => state.setLoading);
   const json = useStore((state) => state.rawJSON);
   const setJSON = useStore((state) => state.setJSON);
+  const currentItem = useStore((state) => state.currentItem);
+  const history = useHistory();
 
   useEffect(async () => {
     setLoading(true);
