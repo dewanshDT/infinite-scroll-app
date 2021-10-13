@@ -68,6 +68,7 @@ a {
 
 .image > img {
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .image-container {

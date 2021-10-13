@@ -16,8 +16,6 @@ function App() {
   const setLoading = useStore((state) => state.setLoading);
   const json = useStore((state) => state.rawJSON);
   const setJSON = useStore((state) => state.setJSON);
-  const currentItem = useStore((state) => state.currentItem);
-  const history = useHistory();
 
   useEffect(async () => {
     setLoading(true);

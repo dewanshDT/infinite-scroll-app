@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from "react";
+import React, { useRef, useCallback, useEffect } from "react";
 import useStore from "../store";
 import BackBtn from "./BackBtn";
 import ContentBlock from "./ContentBlock";
@@ -7,6 +7,8 @@ const Content = () => {
   const json = useStore((state) => state.rawJSON);
   const setPageNumber = useStore((state) => state.setPageNumber);
   const loading = useStore((state) => state.loading);
+  const setScrollPosition = useStore(state => state.setScrollPosition);
+  const scrollPosition = useStore(state => state.scrollPosition);
   const contentList = useRef();
 
   // observer --->
@@ -25,6 +27,15 @@ const Content = () => {
   const scrollUp = () => {
     contentList.current.scroll(0, 0);
   };
+
+  // for setting scroll position
+  contentList.current && contentList.current.addEventListener("scroll", () => {
+    setScrollPosition(contentList.current.scrollTop);
+  })
+
+  useEffect(() => {
+    contentList.current.scrollTop = scrollPosition;
+  }, [])
 
   return (
     <>

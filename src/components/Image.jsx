@@ -15,7 +15,7 @@ const Image = () => {
   return (
     <div className="image-container">
       <BackBtn func={back} />
-      hello bois, here's your id {id}
+      here's your id {id}
       <img src={currentItem.urls ? currentItem.urls.regular : ""} />
     </div>
   );
